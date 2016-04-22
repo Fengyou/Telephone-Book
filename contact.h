@@ -20,9 +20,9 @@ typedef struct Peo
 
 typedef struct Contact
 {
-	PEO dhb[MAX_PEO];//存储人的信息
+	PEO dhb[MAX_PEO];//瀛樺偍浜虹殑淇℃伅
 	//	PEO dhb;
-	int count;//记录有效个数
+	int count;//璁板綍鏈夋晥涓暟
 	//	PPEO next;
 }PCON, *Pcon;
 
