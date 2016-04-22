@@ -17,22 +17,22 @@ void add_peo(Pcon pcon)
 	if (pcon->count < MAX_PEO)
 	{
 
-		printf("ÇëÊäÈëĞÕÃû:\n");
+		printf("è¯·è¾“å…¥å§“å:\n");
 		scanf_s("%s", pcon->dhb[pcon->count].name, NAME_LEN);
-		printf("ÇëÊäÈëÄêÁä:\n");
+		printf("è¯·è¾“å…¥å¹´é¾„:\n");
 		scanf_s("%d", &(pcon->dhb[pcon->count]).age,4);
-		printf("ÇëÊäÈëĞÔ±ğ£º\n");
+		printf("è¯·è¾“å…¥æ€§åˆ«ï¼š\n");
 		scanf_s("%s", pcon->dhb[pcon->count].sex, SEX_LEN);
-		printf("ÇëÊäÈëµç»°:\n ");
+		printf("è¯·è¾“å…¥ç”µè¯:\n ");
 		scanf_s("%s", pcon->dhb[pcon->count].tele,TELE_LEN);
-		printf("ÇëÊäÈëµØÖ·:\n");
+		printf("è¯·è¾“å…¥åœ°å€:\n");
 		scanf_s("%s", pcon->dhb[pcon->count].addr,ADDR_LEN);
 		pcon->count++;
-		printf("ÒÑÌí¼Ó³É¹¦£¡\n");
+		printf("å·²æ·»åŠ æˆåŠŸï¼\n");
 	}
 	else
 	{
-		printf("µç»°±¾ÒÑÂú£¡\n");
+		printf("ç”µè¯æœ¬å·²æ»¡ï¼\n");
 		return ;
 	}
 }
@@ -40,12 +40,12 @@ void del_peo(Pcon pcon)
 {
 	int i, j;
 	char name[20];
-	printf("ÇëÊäÈëÒªÉ¾³ıµÄĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å§“åï¼š\n");
 	scanf_s("%s", name, NAME_LEN);
 	j = find(name, pcon);
 	if (j == -1)
 	{
-		printf("ÒªÉ¾³ıµÄÈË²»´æÔÚ£¡\n");
+		printf("è¦åˆ é™¤çš„äººä¸å­˜åœ¨ï¼\n");
 		return;
 	}
 	else
@@ -56,29 +56,29 @@ void del_peo(Pcon pcon)
 		}		
 	}
 	pcon->count--;
-	printf("É¾³ı³É¹¦£¡\n");
+	printf("åˆ é™¤æˆåŠŸï¼\n");
 }
 void search(Pcon pcon)
 {
 	int i, j;
 	char name[20];
-	printf("ÇëÊäÈëÒª²éÕÒµÄĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å§“åï¼š\n");
 	scanf_s("%s", name, NAME_LEN);
 	for (i = 0; i < pcon->count; i++)
 	{
 		j = find(name, pcon);
 		if (j == -1)
 		{
-			printf("Òª²éÕÒµÄÈË²»´æÔÚ£¡\n");
+			printf("è¦æŸ¥æ‰¾çš„äººä¸å­˜åœ¨ï¼\n");
 			return;
 		}
 		else
 		{
-			printf("ĞÕÃû£º%s\t", pcon->dhb[i].name);
-			printf("ÄêÁä£º%d\t", pcon->dhb[i].age);
-			printf("ĞÔ±ğ£º%s\t", pcon->dhb[i].sex);
-			printf("µç»°£º%s\t", pcon->dhb[i].tele);
-			printf("µØÖ·£º%s\n", pcon->dhb[i].addr);
+			printf("å§“åï¼š%s\t", pcon->dhb[i].name);
+			printf("å¹´é¾„ï¼š%d\t", pcon->dhb[i].age);
+			printf("æ€§åˆ«ï¼š%s\t", pcon->dhb[i].sex);
+			printf("ç”µè¯ï¼š%s\t", pcon->dhb[i].tele);
+			printf("åœ°å€ï¼š%s\n", pcon->dhb[i].addr);
 		}
 	}
 }
@@ -86,28 +86,28 @@ void modify(Pcon pcon)
 {
 	int j;
 	char name[20];
-	printf("ÇëÊäÈëÒªĞŞ¸ÄµÄĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å§“åï¼š\n");
 	scanf_s("%s", name, NAME_LEN);
 	j = find(name, pcon);
 	if (j == -1)
 	{
-		printf("ÒªĞŞ¸ÄµÄÈË²»´æÔÚ£¡\n");
+		printf("è¦ä¿®æ”¹çš„äººä¸å­˜åœ¨ï¼\n");
 		return;
 	}
 	else
 	{
-		printf("ÇëÊäÈëĞÕÃû:\n");
+		printf("è¯·è¾“å…¥å§“å:\n");
 		scanf_s("%s", pcon->dhb[j].name, NAME_LEN);
-		printf("ÇëÊäÈëÄêÁä:\n ");
+		printf("è¯·è¾“å…¥å¹´é¾„:\n ");
 		scanf_s("%d", &(pcon->dhb[j]).age,4);
-		printf("ÇëÊäÈëĞÔ±ğ:\n");
+		printf("è¯·è¾“å…¥æ€§åˆ«:\n");
 		scanf_s("%s", pcon->dhb[j].sex,SEX_LEN );
-		printf("ÇëÊäÈëµç»°:\n");
+		printf("è¯·è¾“å…¥ç”µè¯:\n");
 		scanf_s("%s", pcon->dhb[j].tele,TELE_LEN);
-		printf("ÇëÊäÈëµØÖ·:\n");
+		printf("è¯·è¾“å…¥åœ°å€:\n");
 		scanf_s("%s", pcon->dhb[j].addr,ADDR_LEN);
 	}
-	printf("ĞŞ¸Ä³É¹¦£¡\n");
+	printf("ä¿®æ”¹æˆåŠŸï¼\n");
 }
 void show(Pcon pcon)
 {
@@ -115,11 +115,11 @@ void show(Pcon pcon)
 	for (i = 0; i < pcon->count; i++)
 	{
 
-		printf("ĞÕÃû£º%s\t ", pcon->dhb[i].name);
-		printf("ÄêÁä£º%d\t", pcon->dhb[i].age);
-		printf("ĞÔ±ğ£º%s\t", pcon->dhb[i].sex);
-		printf("µç»°£º%s\t", pcon->dhb[i].tele);
-		printf("µØÖ·£º%s\n", pcon->dhb[i].addr);
+		printf("å§“åï¼š%s\t ", pcon->dhb[i].name);
+		printf("å¹´é¾„ï¼š%d\t", pcon->dhb[i].age);
+		printf("æ€§åˆ«ï¼š%s\t", pcon->dhb[i].sex);
+		printf("ç”µè¯ï¼š%s\t", pcon->dhb[i].tele);
+		printf("åœ°å€ï¼š%s\n", pcon->dhb[i].addr);
 	}
 }
 void clear(Pcon pcon)
