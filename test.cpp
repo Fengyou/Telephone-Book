@@ -17,7 +17,7 @@ int main()
 	while (input)
 	{
 		print_menu();
-		printf("ÇëÑ¡Ôñ>:");
+		printf("Ã‡Ã«Ã‘Â¡Ã”Ã±>:");
 		scanf_s("%d", &input);
 		switch (input)
 		{
